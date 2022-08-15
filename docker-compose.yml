@@ -1,0 +1,13 @@
+version: "2"
+services:
+
+  guilty_spark_bot:
+    build: .
+    restart: unless-stopped
+    command: npm run start
+    volumes:
+      - ./:/home/node/app
+    environment:
+      - NPM_CONFIG_PREFIX=/home/node/.npm-global
+    ports:
+      - "3000:3000"
